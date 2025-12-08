@@ -1,5 +1,3 @@
-import { userService } from '../../services/user.service-local.js'
-
 const initialState = {}
 
 export function userReducer(state = initialState, action = {}) {
