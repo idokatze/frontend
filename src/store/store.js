@@ -3,12 +3,13 @@ import {
     compose,
     legacy_createStore as createStore,
 } from 'redux'
-import { carReducer } from './reducers/toy.reducer.js'
-// import { userReducer } from './reducers/user.reducer.js'
+
+import { toyReducer } from './reducers/toy.reducer.js'
+import { userReducer } from './reducers/user.reducer.js'
 
 const rootReducer = combineReducers({
-    // carModule: carReducer,
-    // userModule: userReducer,
+    toyModule: toyReducer,
+    userModule: userReducer,
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
