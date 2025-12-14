@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './assets/style/app.css'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -18,9 +17,9 @@ export default function App() {
     return (
         <Provider store={store}>
             <Router>
-                <section className="app">
+                <section className="app main-layout">
                     <AppHeader />
-                    <main className="main-layout">
+                    <main>
                         <Routes>
                             <Route element={<HomePage />} path="/" />
                             <Route element={<ToyIndex />} path="/toy" />

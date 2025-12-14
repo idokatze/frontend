@@ -1,0 +1,10 @@
+.toy-filter {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    > * {
+        margin: 1em;
+        display: flex;
+        justify-content: space-around;
+    }
+}

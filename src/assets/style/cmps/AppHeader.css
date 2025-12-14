@@ -1,0 +1,23 @@
+.app-header {
+    padding: 1em;
+    background-color: var(--clr-brand1);
+    color: var(--clr-primary);
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.app-header .logo {
+    font-family: libre, sans-serif;
+    font-size: 6rem;
+    width: 3rem;
+    cursor: pointer;
+}
+
+.app-header nav {
+    margin-block-end: 1em;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+    justify-content: end;
+}

@@ -1,0 +1,24 @@
+.toy-index{
+    margin: 1em 1em;
+    gap: 1em;
+}
+
+.toy-list-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+/* toy card */
+.toy-preview {
+    width: auto;
+    background-color: grey;
+    place-content: center;
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+}
+
+.card-btns {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,12 @@
+/* Base */
+@import '../style/base/reset.css';
+@import '../style/base/base.css';
+@import '../style/base/layout.css';
+@import '../style/base/helpers.css';
+
+
+/* cmps */
+@import './cmps/AppHeader.css';
+@import './cmps/ToyList.css';
+@import './cmps/ToyFilter.css';
+

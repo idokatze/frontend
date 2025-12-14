@@ -1,0 +1,20 @@
+.btn {
+    cursor: pointer;
+    background-color: var(--clr-secondary);
+    margin: 0.5em;
+    border: 0;
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    box-shadow: #00000026 1.95px 1.95px 2.6px;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: var(--clr-brand2);
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:disabled {
+    pointer-events: none;
+}
