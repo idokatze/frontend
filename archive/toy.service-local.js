@@ -84,20 +84,20 @@ export const toyService = {
     getDefaultFilter,
 }
 
-function query(filterBy = {}) {
-    return storageService.query(STORAGE_KEY).then((toys) => {
-        if (!toys || !toys.length) {
-            toys = hardcodedToys
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(toys))
-        }
-        if (!filterBy.txt) filterBy.txt = ''
-        if (!filterBy.maxPrice) filterBy.maxPrice = Infinity
+async function query(filterBy = {}) {
+    let toys = await storageService.query(STORAGE_KEY)
 
-        const regExp = new RegExp(filterBy.txt, 'i')
-        return toys.filter(
-            (toy) => regExp.test(toy.name) && toy.price <= filterBy.maxPrice
-        )
-    })
+    if (!toys || !toys.length) {
+        toys = hardcodedToys
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(toys))
+    }
+    if (!filterBy.txt) filterBy.txt = ''
+    if (!filterBy.maxPrice) filterBy.maxPrice = Infinity
+
+    const regExp = new RegExp(filterBy.txt, 'i')
+    return toys.filter(
+        (toy) => regExp.test(toy.name) && toy.price <= filterBy.maxPrice
+    )
 }
 
 function getById(toyId) {

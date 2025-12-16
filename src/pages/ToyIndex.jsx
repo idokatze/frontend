@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom'
 export function ToyIndex() {
     const dispatch = useDispatch()
     const toys = useSelector((storeState) => storeState.toyModule.toys)
+    const user = useSelector((storeState) => storeState.userModule.loggedInUser)
     const filterBy = useSelector((storeState) => storeState.toyModule.filterBy)
     const isLoading = useSelector(
         (storeState) => storeState.toyModule.isLoading
@@ -66,6 +67,7 @@ export function ToyIndex() {
         const toyToSave = { ...toy, price }
         try {
             const savedToy = await saveToy(toyToSave)
+            console.log('savedToy:', savedToy)
             console.log(`Toy updated to price: $${savedToy.price}`)
             // showSuccessMsg(`Toy updated to price: $${savedToy.price}`)
         } catch (err) {
@@ -81,12 +83,18 @@ export function ToyIndex() {
                 Add Random Toy
             </button>
             <ToyFilter filterBy={filterBy} onSetFilter={onSetFilter} />
+            {user && user.isAdmin && (
+                <button style={{ alignSelf: 'center' }}>
+                    <Link to="/toy/edit">Add Toy</Link>
+                </button>
+            )}
             <main>
                 {!isLoading ? (
                     <ToyList
                         toys={toys}
                         onRemoveToy={onRemoveToy}
                         onEditToy={onEditToy}
+                        loggedInUser={user}
                     />
                 ) : (
                     <div>Loading...</div>
